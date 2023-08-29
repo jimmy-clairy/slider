@@ -19,6 +19,7 @@ body {
   border-radius: 5px;
   display: grid;
   place-items: center;
+  overflow: hidden;
 }
 .direction-btn {
   position: absolute;
@@ -55,6 +56,67 @@ body {
 }
 .slide.active {
   display: flex;
+  position: relative;
+}
+.slide.slideInRight {
+  animation: slideInRight .4s both;
+}
+@keyframes slideInRight {
+  0%{
+    opacity: 1;
+    right: 0;
+  }
+  40%{
+    right: 10%;
+  }
+  100%{
+    opacity: 0;
+    right: -30%;
+  }
+}
+.slide.slideOutRight {
+  animation: slideOutRight .4s both;
+}
+@keyframes slideOutRight {
+  0%{
+    opacity: 0;
+    right: 40%;
+  }
+
+  100%{
+    opacity: 1;
+    right: 0;
+  }
+}
+.slide.slideInLeft {
+  animation: slideInLeft .4s both;
+}
+@keyframes slideInLeft {
+  0%{
+    opacity: 1;
+    left: 0;
+  }
+  40%{
+    left: 10%;
+  }
+  100%{
+    opacity: 0;
+    left: -30%;
+  }
+}
+.slide.slideOutLeft {
+  animation: slideOutLeft .4s both;
+}
+@keyframes slideOutLeft {
+  0%{
+    opacity: 0;
+    left: 40%;
+  }
+
+  100%{
+    opacity: 1;
+    left: 0;
+  }
 }
 .content {
   margin-bottom: 50px;
